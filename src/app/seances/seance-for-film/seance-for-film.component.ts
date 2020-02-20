@@ -22,8 +22,11 @@ export class SeanceForFilmComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      const id = +params.get('id');
-      this.movieService.findOne(id).subscribe((movie: Movie) => this.movie = movie)
+      const id = +params
+        .get('id');
+      this.movieService.findOne(id).subscribe((movie: Movie) => {
+        return this.movie = movie
+      })
     });
   }
 
