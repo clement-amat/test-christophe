@@ -1,0 +1,12 @@
+    <ng-container *ngFor="let item of showTimes | keyvalue:originalOrder">
+      <h2>{{ item.key | date:'fullDate' }}</h2>
+      <div class="flex-container">
+        <nb-card class="showtime" *ngFor="let s of item.value"
+        [class.not-available]="!s.isAvailable"
+        (click)=book()>
+          <nb-card-body>
+            {{ s.time | date:'shortTime' }}
+          </nb-card-body>
+        </nb-card>
+      </div>
+      </ng-container>

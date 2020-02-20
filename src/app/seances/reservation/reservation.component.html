@@ -1,0 +1,11 @@
+<h3>Choisissez votre place</h3>
+<div class="seat-selection">
+  <div class="row" *ngFor="let row of seating.seats; let r">
+    <button nbButton *ngFor="let column of row; let c"
+     [disabled]="!column.isAvailable"
+     [nbPopover]="column.name" nbPopoverTrigger="hint" nbPopoverPlacement="bottom"
+     (click)="book(column)">
+    <nb-icon icon="clipboard"></nb-icon>
+  </button>
+  </div>
+</div>

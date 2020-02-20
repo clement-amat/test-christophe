@@ -1,0 +1,4 @@
+<h1>Prochaines Séances</h1>
+<div class="flex-container">
+  <app-movie *ngFor="let m of movies$ | async" (click)="seances(m.id)" [movie]="m"></app-movie>
+</div>
